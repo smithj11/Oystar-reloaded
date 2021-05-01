@@ -7,7 +7,7 @@ Welcome to Oystar Reloaded! To run this project:
 
 2. Install PostGresSQL: https://www.postgresql.org/download/
 
-3. Download this repo to desktop: 
+3. Download this repo to desktop in the location of choice.
 
 ## How to Run ##
 ### Create Virtual Env ###

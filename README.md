@@ -55,3 +55,9 @@ To run any Django or Python-related command inside the Docker container, run the
 ```bash
     make compose-manage-py "command"
 ```
+
+### How to Become a SuperUser ###
+You can directly edit database entries from Django's admin function (http://localhost/admin) using the following superuser login:
+
+Username: juliasmith
+Password: juliasmith

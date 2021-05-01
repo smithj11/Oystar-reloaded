@@ -1,0 +1,4 @@
+-r prod.txt
+
+black==21.4b2
+mypy==0.812

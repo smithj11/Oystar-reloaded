@@ -1,0 +1,14 @@
+<div>
+    {% url 'index' as index_url %}
+    <span><a href="{% url 'public:index' %}">Home</a></span>
+    <span><a href="{% url 'public:about' %}">About</a></span>
+    <span style="float:right">
+        {% if user.is_authenticated %}
+            {% url 'accounts:profile' as 'profile_url' %}
+            <span>Hi {% if request.path == profile_url %} {{user.username}} {% else %} <a href="{{profile.url}}">{{user.username}}</a>{% endif %}</span>
+            <span><a href="{% url 'accounts:logout' %}">Logout</a></span>
+        {% else %}
+            <span><a href="{% url 'accounts:login' %}">Login</a></span>
+        {% endif %}
+    </span>
+</div>

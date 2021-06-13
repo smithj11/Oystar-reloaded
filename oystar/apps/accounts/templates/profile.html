@@ -4,7 +4,9 @@
 
 <h1>
    Student Dash
-   {{user.username}}
+   {%if user.is_authenticated %}
+   <span>Welcome, {{user.full_name}}</span>
+   {% endif %}
 </h1>
 
 {% endblock %}

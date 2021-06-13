@@ -21,20 +21,20 @@ class RegisterForm(UserCreationForm):
         print(model)
         fields =("email", "full_name", "password1", "password2")
     
-    # def save(self, commit=True):
-    #     user = super(RegisterForm, self).save(commit=False)
-    #     user.full_name = cleaned_data["full_name"]
-    #     user.email = cleaned_data["email"]
+    def save(self, commit=True):
+        user = super(RegisterForm, self).save(commit=False)
+        user.full_name = self.cleaned_data['full_name']
+        print(user.full_name)
 
-    #     if commit:
-    #         user.save()
+        if commit:
+            user.save()
+            print(user)
 
-    #     return user
+        return user
     
-
 
 
 class LoginForm(AuthenticationForm):
     template='accounts/login.html'
+    username= forms.CharField(label='Email ')
     model = get_user_model()
-    username = forms.CharField(label='Email / Username')

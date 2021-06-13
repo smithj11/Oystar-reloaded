@@ -1,16 +1,66 @@
-<!-- {% extends 'base.html' %}
-{% block title %}Oystar Home{% endblock %}
-{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Oystar Login</title>
+        <meta name="description" content="Log in to Oystar">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'style/login.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    </head>
+    <body>
+        <!-- <form method='post'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form> -->
 
+        <form id="login-form" method='post'>
+            {% csrf_token %}
+            <div id="login-body">
+                <img id="logo" src = "{% static 'img/logo.png' %}" alt="logo">
+                <p class="text" id="instructions">Sign in to continue</p>
+                <div id="login-area">
+                    <div id="input-fields">
+                        <i class="email-icon"></i>
+                        <tr>
+                        <td>Email {{form.username}}</td>
+                         </tr>
 
+                        <br>
+                        <i class="password-icon"></i>
+                        <tr>
+                        <td> password: {{form.password}} </td>
+                        </tr>
+                        <br>
+                    </div>
+                </div>
+                <button class="text" type="submit" id="login-button">Sign In</button>
+            </div>
+        </form>
 
-<h1>
-   LogIn
-</h1>
-<form method='post'>
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Log In</button>
-</form>
+        <div id="divider">
+            <svg id="divider-svg" height="100">
+                <line class="line" id="line1" x1="0" y1="40" y2="40"></line>
+                <text class="text" y="47">OR</text>
+                <line class="line" id="line2" y1="40" y2="40"></line>
+            </svg>
+        </div>
 
-{% endblock %} -->
+        <div id="google-fb">
+            <i class="google-icon"></i>
+            <button class="text" id="google-button">Login with Google</button>
+            <i class="fb-icon"></i>
+            <button class="text" id="fb-button">Login with Facebook</button>
+        </div>
+
+        <div id="register">
+            <p class="text" >Don't have an account? <span>Register</span></p>
+        </div>
+         
+        <!-- <script src="js/jquery.min.js"></script> -->
+    </body>
+</html>

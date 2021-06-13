@@ -19,7 +19,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_DIR = Path.joinpath(BASE_DIR, "oystar")
 # TEMPLATE_DIRS = Path.joinpath(PROJECT_DIR, 'templates')
 AUTH_USER_MODEL = 'accounts.CustomUser'
+STATIC_URL = Path.joinpath(PROJECT_DIR,'static')
+STATICFILES_DIRS = [os.path.join(PROJECT_DIR, 'static')]
 
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticfiles')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -138,5 +141,5 @@ STATIC_URL = "/static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL="accounts:login"
-LOGIN_REDIRECT_URL="public:index"
+LOGIN_REDIRECT_URL="accounts:profile"
 LOGOUT_REDIRECT_URL="public:index"

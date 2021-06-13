@@ -53,6 +53,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = []
 
     objects = CustomUserManager()
+    
+    @property
+    def get_full_name(self) :
+        return self.full_name
 
 # class UserInterest(models.Model):
 #     name = models.CharField(max_length=64, unique=True)
